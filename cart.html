@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - TechStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 56px; }
+        .cart-item { border-bottom: 1px solid #dee2e6; padding: 15px 0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://via.placeholder.com/40x40" alt="TechStore" class="d-inline-block align-text-top me-2">
+                TechStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cart.html">Корзина</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Админ-панель</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Войти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-5">Корзина</h1>
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Список товаров в корзине -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="cart-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://via.placeholder.com/80x80/6f42c1/ffffff?text=Товар" class="img-fluid" alt="Товар">
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Смартфон Premium X</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" type="button">-</button>
+                                        <input type="text" class="form-control text-center" value="1">
+                                        <button class="btn btn-outline-secondary" type="button">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h5>39 999 ₽</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <img src="https://via.placeholder.com/80x80/fd7e14/ffffff?text=Товар" class="img-fluid" alt="Товар">
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Наушники SoundMax</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <button class="btn btn-outline-secondary" type="button">-</button>
+                                        <input type="text" class="form-control text-center" value="2">
+                                        <button class="btn btn-outline-secondary" type="button">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <h5>19 998 ₽</h5>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-danger">Удалить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Итоги и оформление заказа -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Итоги заказа</h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Товары (3 шт.)</span>
+                            <span>59 997 ₽</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Доставка</span>
+                            <span>500 ₽</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>Итого</strong>
+                            <strong>60 497 ₽</strong>
+                        </div>
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#orderModal">Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно оформления заказа -->
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Оформление заказа</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Фамилия</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Адрес доставки</label>
+                            <textarea class="form-control" id="address" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="payment" class="form-label">Способ оплаты</label>
+                            <select class="form-select" id="payment">
+                                <option value="card">Банковская карта</option>
+                                <option value="cash">Наличные при получении</option>
+                                <option value="online">Онлайн-платеж</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary">Подтвердить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
